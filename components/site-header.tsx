@@ -28,22 +28,22 @@ const solutions = [
   {
     title: "Century for Government Schools",
     href: "/solutions/government-schools",
-    image: "/images/solutions-overview.jpg", // Path to the image for this solution
+    image: "/images/solutions-overview.jpg", 
   },
   {
     title: "Century for Colleges",
     href: "/solutions/colleges",
-    image: "/images/solutions-overview.jpg", // Path to the image for this solution
+    image: "/images/solutions-overview.jpg", 
   },
   {
     title: "Century for Tertiary Institutions",
     href: "/solutions/tertiary-institutions",
-    image: "/images/solutions-overview.jpg", // Path to the image for this solution
+    image: "/images/solutions-overview.jpg",
   },
   {
     title: "Century for Private Schools",
     href: "/solutions/private-schools",
-    image: "/images/solutions-overview.jpg", // Path to the image for this solution
+    image: "/images/solutions-overview.jpg", 
   },
 ];
 
@@ -220,7 +220,7 @@ export default function SiteHeader() {
                           </Link>
                         ))}
                       </div>
-                      <div className="mt-6 pt-4 border-t">
+                      {/* <div className="mt-6 pt-4 border-t">
                         <div className="flex items-center justify-between">
                           <div>
                             <h4 className="font-medium mb-1">Get started</h4>
@@ -231,7 +231,7 @@ export default function SiteHeader() {
                           </div>
                           <Button variant="secondary">Get started</Button>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
