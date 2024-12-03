@@ -18,10 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  CircleUserRound,
-  Menu,
-} from "lucide-react";
+import { CircleUserRound, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import Logo from "./ui/logo";
@@ -162,7 +159,7 @@ export default function SiteHeader() {
                             >
                               <Link
                                 href={solution.href}
-                                className="text-gray-700 text-sm group-hover:text-blue-600 transition-colors duration-300" // Hover color change
+                                className="text-gray-700 text-md group-hover:text-blue-600 transition-colors duration-300" // Hover color change
                               >
                                 {solution.title}
                               </Link>
