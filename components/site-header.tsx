@@ -28,12 +28,12 @@ const solutions = [
   {
     title: "Century for Government Schools",
     href: "/solutions/government-schools",
-    image: "/images/solutions-overview.jpg", 
+    image: "/images/solutions-overview.jpg",
   },
   {
     title: "Century for Colleges",
     href: "/solutions/colleges",
-    image: "/images/solutions-overview.jpg", 
+    image: "/images/solutions-overview.jpg",
   },
   {
     title: "Century for Tertiary Institutions",
@@ -41,9 +41,14 @@ const solutions = [
     image: "/images/solutions-overview.jpg",
   },
   {
+    title: "Century for Training Centers",
+    href: "/solutions/training-centers",
+    image: "/images/solutions-overview.jpg",
+  },
+  {
     title: "Century for Private Schools",
     href: "/solutions/private-schools",
-    image: "/images/solutions-overview.jpg", 
+    image: "/images/solutions-overview.jpg",
   },
 ];
 
@@ -118,13 +123,17 @@ const features = [
   },
 ];
 
+const SkeletonLoader = () => (
+  <div className="w-[400px] h-[300px] bg-gray-300 rounded-lg animate-pulse"></div>
+);
+
 export default function SiteHeader() {
   const [open, setOpen] = React.useState(false);
   const [showFeatures, setShowFeatures] = React.useState(false);
   const [hoveredImage, setHoveredImage] = React.useState(solutions[0].image); // Default image
 
   return (
-    <div className="h-screen">
+    <div className="">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-6xl mx-auto flex h-14 items-center justify-between">
           <div className="flex items-center space-x-4">
@@ -220,18 +229,18 @@ export default function SiteHeader() {
                           </Link>
                         ))}
                       </div>
-                      {/* <div className="mt-6 pt-4 border-t">
+                      <div className="mt-6 pt-4 border-t">
                         <div className="flex items-center justify-between">
-                          <div>
+                          {/* <div>
                             <h4 className="font-medium mb-1">Get started</h4>
                             <p className="text-sm text-muted-foreground">
                               Their food sources have decreased, and their
                               numbers
                             </p>
-                          </div>
+                          </div> */}
                           <Button variant="secondary">Get started</Button>
                         </div>
-                      </div> */}
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -243,9 +252,9 @@ export default function SiteHeader() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/academy" legacyBehavior passHref>
+                  <Link href="/how-it-works" legacyBehavior passHref>
                     <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                      Contact Us
+                      How It Works
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -254,8 +263,8 @@ export default function SiteHeader() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="ghost">Sign In</Button>
+            <Button>Start Free</Button>
           </div>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -313,6 +322,13 @@ export default function SiteHeader() {
                   </div>
                 )}
                 <Link
+                  href="/solutions"
+                  className="px-4 py-2 text-lg font-medium hover:bg-accent"
+                  onClick={() => setOpen(false)}
+                >
+                  Solutions
+                </Link>
+                <Link
                   href="/learn"
                   className="px-4 py-2 text-lg font-medium hover:bg-accent"
                   onClick={() => setOpen(false)}
@@ -334,13 +350,13 @@ export default function SiteHeader() {
                     className="w-full font-[family-name:var(--font-rethink)]"
                     onClick={() => setOpen(false)}
                   >
-                    Log in
+                    Log In
                   </Button>
                   <Button
                     className="w-full font-[family-name:var(--font-rethink)]"
                     onClick={() => setOpen(false)}
                   >
-                    Sign up
+                    Start Free
                   </Button>
                 </div>
               </div>
