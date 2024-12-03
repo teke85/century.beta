@@ -20,13 +20,7 @@ import {
 } from "@/components/ui/sheet";
 import {
   CircleUserRound,
-  Book,
-  PieChart,
-  DollarSign,
-  Fingerprint,
-  Bell,
   Menu,
-  X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
