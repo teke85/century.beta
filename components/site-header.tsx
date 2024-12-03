@@ -123,9 +123,9 @@ const features = [
   },
 ];
 
-const SkeletonLoader = () => (
-  <div className="w-[400px] h-[300px] bg-gray-300 rounded-lg animate-pulse"></div>
-);
+// const SkeletonLoader = () => (
+//   <div className="w-[400px] h-[300px] bg-gray-300 rounded-lg animate-pulse"></div>
+// );
 
 export default function SiteHeader() {
   const [open, setOpen] = React.useState(false);

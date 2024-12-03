@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function HeroSection() {
   return (
