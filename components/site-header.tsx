@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,6 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+
 import {
   Sheet,
   SheetContent,
@@ -18,10 +20,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
 import { CircleUserRound, Menu } from "lucide-react";
+
 import { cn } from "@/lib/utils";
+
 import { ChevronDown } from "lucide-react";
+
 import Logo from "./ui/logo";
+
 import Image from "next/image";
 
 const solutions = [
@@ -30,21 +37,25 @@ const solutions = [
     href: "/solutions/government-schools",
     image: "/images/solutions-overview.jpg",
   },
+
   {
     title: "Century for Colleges",
     href: "/solutions/colleges",
     image: "/images/solutions-overview.jpg",
   },
+
   {
     title: "Century for Tertiary Institutions",
     href: "/solutions/tertiary-institutions",
     image: "/images/solutions-overview.jpg",
   },
+
   {
     title: "Century for Training Centers",
     href: "/solutions/training-centers",
     image: "/images/solutions-overview.jpg",
   },
+  
   {
     title: "Century for Private Schools",
     href: "/solutions/private-schools",
@@ -168,7 +179,7 @@ export default function SiteHeader() {
                             >
                               <Link
                                 href={solution.href}
-                                className="text-gray-700 text-md group-hover:text-blue-600 transition-colors duration-300" // Hover color change
+                                className="text-gray-700 text-sm group-hover:text-blue-600 transition-colors duration-300" // Hover color change
                               >
                                 {solution.title}
                               </Link>
@@ -185,6 +196,7 @@ export default function SiteHeader() {
                           width={400}
                           height={300}
                           className="rounded-lg transition-all duration-300" // Smooth transition
+                          priority
                         />
                       </div>
                     </div>
@@ -244,13 +256,23 @@ export default function SiteHeader() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
                 <NavigationMenuItem>
-                  <Link href="/learn" legacyBehavior passHref>
+                  <Link href="/pricing" legacyBehavior passHref>
                     <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                       Pricing
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/directory" legacyBehavior passHref>
+                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                      School Directory
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <Link href="/how-it-works" legacyBehavior passHref>
                     <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
@@ -258,13 +280,14 @@ export default function SiteHeader() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+
               </NavigationMenuList>
             </NavigationMenu>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">Sign In</Button>
-            <Button>Start Free</Button>
+            <Button variant="ghost">Book Demo</Button>
+            <Button>Try for Free</Button>
           </div>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -350,7 +373,7 @@ export default function SiteHeader() {
                     className="w-full font-[family-name:var(--font-rethink)]"
                     onClick={() => setOpen(false)}
                   >
-                    Log In
+                    Book Demo
                   </Button>
                   <Button
                     className="w-full font-[family-name:var(--font-rethink)]"

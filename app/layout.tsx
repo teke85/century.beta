@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Montserrat, Rethink_Sans, Lora } from "next/font/google";
+import RootProviders from "@/components/providers/RootProviders";
 
 // Montserrat font configuration
 const montserrat = Montserrat({
@@ -31,6 +32,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -38,8 +40,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Student Management System",
-  description: "Century - Student Management System",
+  title: "Century - Student Management System",
+  description: "A Student Management System",
+  openGraph: {
+    title: "Century - Student Management System",
+    description: "A Student Management System",
+    type: "website",
+    locale: "en_US",
+    url: "https://centurybeta.vercel.app/",
+    siteName: "Century",
+  },
 };
 
 export default function RootLayout({
@@ -52,7 +62,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${montserrat.variable} ${rethink.variable} ${lora.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <RootProviders>{children}</RootProviders>
       </body>
     </html>
   );
