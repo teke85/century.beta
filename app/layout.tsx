@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Montserrat, Rethink_Sans, Lora } from "next/font/google";
-import RootProviders from "@/components/providers/RootProviders";
 
 // Montserrat font configuration
 const montserrat = Montserrat({
