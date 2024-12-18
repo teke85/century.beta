@@ -62,7 +62,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${montserrat.variable} ${rethink.variable} ${lora.variable} ${geistMono.variable} antialiased`}
       >
-        <RootProviders>{children}</RootProviders>
+        {children}
       </body>
     </html>
   );
