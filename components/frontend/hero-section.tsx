@@ -6,15 +6,15 @@ export default function HeroSection() {
     <section className="w-full">
       {/* Hero Section */}
       <div className=" mx-auto px-4 py-20 text-center">
-        <div className="inline-flex items-center rounded-full bg-gray-100 px-4 py-1.5 mb-8">
+        <div className="inline-flex items-center rounded-full px-4 py-1.5 mb-8">
           <Badge
             variant="secondary"
             className="h-8 items-center gap-2 pl-4 pr-6 text-base"
           >
-            <span className="text-sm font-medium black_gradient">Welcome to Century</span>
+            <span className="text-sm font-medium black_gradient dark:text-white">Welcome to Century</span>
           </Badge>
         </div>
-        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
           Your Complete School Management Solution
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">

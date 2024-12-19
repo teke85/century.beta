@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 import {
   NavigationMenu,
@@ -55,7 +56,7 @@ const solutions = [
     href: "/solutions/training-centers",
     image: "/images/solutions-overview.jpg",
   },
-  
+
   {
     title: "Century for Private Schools",
     href: "/solutions/private-schools",
@@ -140,6 +141,7 @@ const features = [
 
 export default function SiteHeader() {
   const [open, setOpen] = React.useState(false);
+  const { theme, setTheme } = useTheme();
   const [showFeatures, setShowFeatures] = React.useState(false);
   const [hoveredImage, setHoveredImage] = React.useState(solutions[0].image); // Default image
 
@@ -280,10 +282,16 @@ export default function SiteHeader() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-
               </NavigationMenuList>
             </NavigationMenu>
           </div>
+
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="bg-gray-200 dark:bg-gray-800 p-2 rounded-full text-sm"
+          >
+            {theme === "dark" ? "🌞" : "🌙"}
+          </button>
 
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost">Book Demo</Button>

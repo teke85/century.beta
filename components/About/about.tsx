@@ -16,7 +16,7 @@ const About = () => {
               Secure and reliable
             </Badge>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-8 font-bold md:leading-[3rem] lg:leading-[3.5rem] xl:leading-[3.9rem] text-gray-800">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-8 font-bold md:leading-[3rem] lg:leading-[3.5rem] xl:leading-[3.9rem] text-gray-800 dark:text-white">
             A Student Management System you can depend on.
           </h1>
           <p className="mt-4 text-gray-600 font-[family-name:var(--font-rethink)]">
@@ -33,10 +33,10 @@ const About = () => {
               01
             </h1>
             <div className="-mt-10">
-              <h1 className="text-xl md:text-2xl text-opacity-70 mb-3 text-black font-bold">
+              <h1 className="text-xl md:text-2xl text-opacity-70 mb-3 text-black font-bold dark:text-white">
                 Ease of use
               </h1>
-              <p className="w-[90%] lg:w-[70%] text-base text-black text-opacity-60 font-bold">
+              <p className="w-[90%] lg:w-[70%] text-base text-black text-opacity-60 font-bold dark:text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
                 dolorem.
               </p>
@@ -47,10 +47,10 @@ const About = () => {
               02
             </h1>
             <div className="-mt-10">
-              <h1 className="text-xl md:text-2xl text-opacity-70 mb-3 text-black font-bold">
+              <h1 className="text-xl md:text-2xl text-opacity-70 mb-3 text-black dark:text-white font-bold">
                 Secure Login and Authentication feature
               </h1>
-              <p className="w-[90%] lg:w-[70%] text-base text-black text-opacity-60 font-bold">
+              <p className="w-[90%] lg:w-[70%] text-base text-black text-opacity-60 font-bold dark:text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
                 dolorem.
               </p>
