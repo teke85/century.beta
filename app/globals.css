@@ -7,6 +7,13 @@ body {
 }
 
 @layer base {
+  .dark body {
+    background: linear-gradient(
+      to bottom,
+      hsl(220, 94%, 13%),
+      hsl(220, 31%, 32%)
+    );
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -35,7 +42,11 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: linear-gradient(to bottom, rgb(7, 26, 63), rgb(8, 46, 118));
+    --background: linear-gradient(
+      to bottom,
+      hsl(220, 80%, 14%),
+      hsl(220, 87%, 25%)
+    );
     --foreground: 0 0% 100%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;

@@ -11,7 +11,7 @@ export default function HeroSection() {
             variant="secondary"
             className="h-8 items-center gap-2 pl-4 pr-6 text-base"
           >
-            <span className="text-sm font-medium black_gradient dark:text-white">Welcome to Century</span>
+            <span className="text-sm font-medium dark:text-white">Welcome to Century</span>
           </Badge>
         </div>
         <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">

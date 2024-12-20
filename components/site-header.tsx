@@ -164,10 +164,10 @@ export default function SiteHeader() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-2 gap-4 w-[900px] p-4">
+                    <div className="grid grid-cols-2 gap-4 w-[900px] p-4 dark:bg-white">
                       {/* Left Column: Links */}
                       <div>
-                        <h4 className="text-lg font-medium mb-4">
+                        <h4 className="text-lg font-medium dark:text-black mb-4">
                           Our Solutions
                         </h4>
                         <ul className="space-y-2">
