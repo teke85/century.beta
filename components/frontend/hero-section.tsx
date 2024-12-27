@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -11,7 +12,9 @@ export default function HeroSection() {
             variant="secondary"
             className="h-8 items-center gap-2 pl-4 pr-6 text-base"
           >
-            <span className="text-sm font-medium dark:text-white">Welcome to Century</span>
+            <span className="text-sm font-medium dark:text-white">
+              Welcome to Century
+            </span>
           </Badge>
         </div>
         <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
@@ -38,22 +41,24 @@ export default function HeroSection() {
               />
             </svg>
           </Button>
-          <Button variant="outline">
-            See features
-            <svg
-              className="ml-2 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Button>
+          <Link href="contact-us">
+            <Button variant="outline">
+              Book Demo
+              <svg
+                className="ml-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Button>
+          </Link>
         </div>
 
         {/* Trusted By Section */}

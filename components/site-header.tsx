@@ -22,15 +22,39 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { CircleUserRound, Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import {
+  CircleUserRound,
+  Menu,
+  ChevronDown,
+  LogIn,
+  User,
+  Settings,
+  LogOut,
+  HelpCircle,
+  BookOpen,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
-
-import { ChevronDown } from "lucide-react";
 
 import Logo from "./ui/logo";
 
 import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { SchoolRegistrationForm } from "./school-registration-form1";
 
 const solutions = [
   {
@@ -38,25 +62,21 @@ const solutions = [
     href: "/solutions/government-schools",
     image: "/images/solutions-overview.jpg",
   },
-
   {
     title: "Century for Colleges",
     href: "/solutions/colleges",
     image: "/images/solutions-overview.jpg",
   },
-
   {
     title: "Century for Tertiary Institutions",
     href: "/solutions/tertiary-institutions",
     image: "/images/solutions-overview.jpg",
   },
-
   {
     title: "Century for Training Centers",
     href: "/solutions/training-centers",
     image: "/images/solutions-overview.jpg",
   },
-
   {
     title: "Century for Private Schools",
     href: "/solutions/private-schools",
@@ -135,15 +155,11 @@ const features = [
   },
 ];
 
-// const SkeletonLoader = () => (
-//   <div className="w-[400px] h-[300px] bg-gray-300 rounded-lg animate-pulse"></div>
-// );
-
 export default function SiteHeader() {
   const [open, setOpen] = React.useState(false);
   const { theme, setTheme } = useTheme();
   const [showFeatures, setShowFeatures] = React.useState(false);
-  const [hoveredImage, setHoveredImage] = React.useState(solutions[0].image); // Default image
+  const [hoveredImage, setHoveredImage] = React.useState(solutions[0].image);
 
   return (
     <div className="">
@@ -165,7 +181,6 @@ export default function SiteHeader() {
                   <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid grid-cols-2 gap-4 w-[900px] p-4 dark:bg-white">
-                      {/* Left Column: Links */}
                       <div>
                         <h4 className="text-lg font-medium dark:text-black mb-4">
                           Our Solutions
@@ -174,14 +189,14 @@ export default function SiteHeader() {
                           {solutions.map((solution, index) => (
                             <li
                               key={index}
-                              className="group" // Add group for hover effects
+                              className="group"
                               onMouseEnter={() =>
                                 setHoveredImage(solution.image)
-                              } // Update image on hover
+                              }
                             >
                               <Link
                                 href={solution.href}
-                                className="text-gray-700 text-sm group-hover:text-blue-600 transition-colors duration-300" // Hover color change
+                                className="text-gray-700 text-sm group-hover:text-blue-600 transition-colors duration-300"
                               >
                                 {solution.title}
                               </Link>
@@ -189,15 +204,13 @@ export default function SiteHeader() {
                           ))}
                         </ul>
                       </div>
-
-                      {/* Right Column: Image */}
                       <div className="flex items-center justify-center">
                         <Image
-                          src={hoveredImage} // Dynamically updated image
+                          src={hoveredImage}
                           alt="Solution Preview"
                           width={400}
                           height={300}
-                          className="rounded-lg transition-all duration-300" // Smooth transition
+                          className="rounded-lg transition-all duration-300"
                           priority
                         />
                       </div>
@@ -208,7 +221,7 @@ export default function SiteHeader() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Features</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[900px] p-4">
+                    <div className="w-[900px] p-4 dark:bg-white dark:text-black">
                       <div className="flex font-[family-name:var(--font-rethink)] items-center justify-between mb-4 pb-2 border-b">
                         <h4 className="text-lg font-medium">Features</h4>
                         <Link
@@ -245,13 +258,6 @@ export default function SiteHeader() {
                       </div>
                       <div className="mt-6 pt-4 border-t">
                         <div className="flex items-center justify-between">
-                          {/* <div>
-                            <h4 className="font-medium mb-1">Get started</h4>
-                            <p className="text-sm text-muted-foreground">
-                              Their food sources have decreased, and their
-                              numbers
-                            </p>
-                          </div> */}
                           <Button variant="secondary">Get started</Button>
                         </div>
                       </div>
@@ -293,9 +299,63 @@ export default function SiteHeader() {
             {theme === "dark" ? "🌞" : "🌙"}
           </button>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">Book Demo</Button>
-            <Button>Try for Free</Button>
+          <div className="hidden md:flex space-x-4">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">Register your School</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl">
+                <DialogHeader>
+                  <DialogTitle></DialogTitle>
+                  <DialogDescription></DialogDescription>
+                </DialogHeader>
+                <SchoolRegistrationForm />
+              </DialogContent>
+            </Dialog>
+            <DropdownMenu >
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline">
+                  <User className="mr-2 font-[family-name:var(--font-rethink)] h-4 w-4" />
+                  <span>Menu</span>
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuItem>
+                  <Link href="/login" className="flex items-center w-full">
+                    <LogIn className="mr-2 h-4 w-4" />
+                    <span>Login</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="/registration"
+                    className="flex items-center w-full"
+                  >
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Sign Up</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/dashboard" className="flex items-center w-full">
+                    <Settings className="mr-2 h-4 w-4" />
+                    <span>Dashboard</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/help" className="flex items-center w-full">
+                    <HelpCircle className="mr-2 h-4 w-4" />
+                    <span>Help & Support</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/resources" className="flex items-center w-full">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    <span>Resources</span>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -304,7 +364,7 @@ export default function SiteHeader() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full p-0">
+            <SheetContent side="left" className="w-full p-0 bg-black">
               <SheetHeader className="border-b p-4">
                 <SheetTitle className="text-left">Navigation</SheetTitle>
               </SheetHeader>
@@ -381,13 +441,13 @@ export default function SiteHeader() {
                     className="w-full font-[family-name:var(--font-rethink)]"
                     onClick={() => setOpen(false)}
                   >
-                    Book Demo
+                    Login
                   </Button>
                   <Button
                     className="w-full font-[family-name:var(--font-rethink)]"
                     onClick={() => setOpen(false)}
                   >
-                    Start Free
+                    Sign Up
                   </Button>
                 </div>
               </div>

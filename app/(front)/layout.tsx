@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import SiteHeader from "@/components/site-header";
 import React, { ReactNode } from "react";
 
@@ -6,6 +7,7 @@ function FrontLayOut({ children }: { children: ReactNode }) {
     <div>
       <SiteHeader />
       {children}
+      <Footer />
     </div>
   );
 }

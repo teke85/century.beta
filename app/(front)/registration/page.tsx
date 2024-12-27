@@ -1,10 +1,11 @@
-import { SchoolRegistrationForm } from "@/components/school-registration-form";
+import { SchoolRegistrationForm } from "@/components/school-registration-form1";
+import UserRegistrationForm from "@/components/UserRegistrationform";
 import React from "react";
 
 const Registration = () => {
   return (
-    <section>
-      <SchoolRegistrationForm />
+    <section className="py-10">
+      <UserRegistrationForm />
     </section>
   );
 };
