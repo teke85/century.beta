@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-// import { registerSchool } from "@/app/actions/registerSchool";
+import { registerSchool } from "@/app/actions/registerSchool";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,14 +16,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+// } from "@/components/ui/dialog";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const formSchema = z.object({
@@ -64,21 +64,21 @@ export function SchoolRegistrationForm() {
       formData.append(key, value);
     });
 
-    // const result = await registerSchool(formData);
+    const result = await registerSchool(formData);
 
-    //   setIsSubmitting(false);
-    //   if (result.success) {
-    //     setSubmitResult({
-    //       success: true,
-    //       message: `School registered successfully! Your school code is: ${result.schoolCode}`,
-    //     });
-    //   } else {
-    //     setSubmitResult({
-    //       success: false,
-    //       message: result.error || "An error occurred during registration.",
-    //     });
-    //   }
-    // };
+      setIsSubmitting(false);
+      if (result.success) {
+        setSubmitResult({
+          success: true,
+          message: `School registered successfully! Your school code is: ${result.schoolCode}`,
+        });
+      } else {
+        setSubmitResult({
+          success: false,
+          message: result.error || "An error occurred during registration.",
+        });
+      }
+    };
 
     return (
       <Card className="w-full max-w-5xl mx-auto text-black bg-white">
@@ -279,4 +279,4 @@ export function SchoolRegistrationForm() {
       </Card>
     );
   };
-}
+
