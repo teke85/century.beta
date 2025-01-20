@@ -15,7 +15,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { ChevronDown, ChevronRight, Menu } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 type Filters = {
   keyword: string;

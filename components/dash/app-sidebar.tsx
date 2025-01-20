@@ -7,15 +7,12 @@ import {
   Users,
   UserCheck,
   MessageSquare,
-  Bot,
   Command,
   Frame,
   GalleryVerticalEnd,
   LayoutDashboard,
   Map,
   PieChart,
-  Settings2,
-  SquareTerminal,
   BookMarked,
   Building2,
   DollarSign,
@@ -23,9 +20,7 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/dash/nav-main";
-import { NavProjects } from "@/components/dash/nav-projects";
 import { NavUser } from "@/components/dash/nav-user";
-import { TeamSwitcher } from "@/components/dash/team-switcher";
 import {
   Sidebar,
   SidebarContent,
