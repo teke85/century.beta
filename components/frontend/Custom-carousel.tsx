@@ -75,7 +75,7 @@ export default function CustomCarousel() {
           ))}
         </div>
       </div>
-      {/* <button
+      <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/75 hover:text-white transition-colors "
         aria-label="Previous slide"
@@ -88,7 +88,7 @@ export default function CustomCarousel() {
         aria-label="Next slide"
       >
         <ChevronRight className="w-8 h-8" />
-      </button> */}
+      </button>
     </div>
   );
 }

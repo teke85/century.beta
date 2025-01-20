@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React from "react";
 
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
@@ -35,7 +35,7 @@ export function PortalLayout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen">
       <div className="hidden lg:block w-80 border-r">
-      <div className="hidden lg:block">hello</div>
+        <div className="hidden lg:block">hello</div>
         <Sidebar
           filters={filters}
           setFilters={setFilters}
