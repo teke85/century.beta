@@ -18,8 +18,8 @@ model School {
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   name          String
-  contactPerson String
-  code          String       @unique @db.Char(4)
+  contactPerson String?
+  code          String?      @unique @db.Char(4)
   address       String?
   phoneNumber   String?
   image         String?
@@ -37,6 +37,7 @@ model School {
 }
 
 // Enum for School type
+
 enum SchoolType {
   BASIC_SCHOOL
   HIGH_SCHOOL
@@ -48,6 +49,7 @@ enum SchoolType {
 }
 
 // Enum for Onboarding Status
+
 enum OnboardingStatus {
   PENDING
   REJECTED
@@ -81,7 +83,21 @@ model User {
   schoolId  String
   lastLogin DateTime?
 
+  name          String
+  emailVerified Boolean
+  image         String?
+  sessions      Session[]
+  accounts      Account[]
+  registrationStatus RegistrationStatus @default(PENDING)
+
   @@index([schoolId])
+  @@map("user")
+}
+
+enum RegistrationStatus {
+  PENDING
+  APPROVED
+  REJECTED
 }
 
 model Teacher {
@@ -208,4 +224,49 @@ model AcademicRecord {
   studentId String
 
   @@index([studentId, year, term])
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
 }

@@ -85,7 +85,7 @@ export function SchoolRegistrationForm() {
         <CardHeader>
           <CardTitle>School Registration</CardTitle>
           <CardDescription>
-            Register your school to get started with our management system.
+            Register your school to get started with our Student Management System.
           </CardDescription>
         </CardHeader>
         <CardContent>

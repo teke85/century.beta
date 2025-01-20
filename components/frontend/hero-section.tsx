@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -10,10 +11,10 @@ export default function HeroSection() {
         <div className="inline-flex items-center rounded-full px-4 py-1.5 mb-8">
           <Badge
             variant="secondary"
-            className="h-8 items-center gap-2 pl-4 pr-6 text-base"
+            className="h-10 items-center gap-2 pl-4 pr-6 text-base"
           >
-            <span className="text-sm font-medium dark:text-white">
-              Welcome to Century
+            <span className="flex gap-3 items-center text-sm font-medium dark:text-white">
+              <Sparkles /> Welcome to Century
             </span>
           </Badge>
         </div>
@@ -25,7 +26,7 @@ export default function HeroSection() {
           administration with our comprehensive and user-friendly platform.
         </p>
         <div className="mt-10 flex justify-center gap-4">
-          <Button className="bg-black text-white hover:bg-gray-800">
+          <Button className="bg-[#071B44] text-white hover:bg-gray-800">
             Try for free
             <svg
               className="ml-2 h-4 w-4"

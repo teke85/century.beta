@@ -1,11 +1,10 @@
-import React from "react";
+import LoginForm  from '@/components/Login/login-form'
+import React from 'react'
 
-const UserLogin = () => {
+const Login = () => {
   return (
-    <div>
-      <h2>Login</h2>
-    </div>
-  );
-};
+    <section className="w-full flex items-center justify-center h-screen"><LoginForm /></section>
+  )
+}
 
-export default UserLogin;
+export default Login

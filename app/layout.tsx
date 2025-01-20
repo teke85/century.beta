@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Montserrat, Rethink_Sans, Lora } from "next/font/google";
 import RootProviders from "@/components/providers/RootProviders";
+import { Toast } from "@/components/ui/toast";
+import { Toaster } from "@/components/ui/toaster";
 
 // Montserrat font configuration
 const montserrat = Montserrat({
@@ -62,7 +64,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${montserrat.variable} ${rethink.variable} ${lora.variable} ${geistMono.variable} antialiased`}
       >
-        <RootProviders>{children}</RootProviders>
+        <RootProviders>
+          {children}
+          <Toaster />
+        </RootProviders>
       </body>
     </html>
   );

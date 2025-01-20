@@ -26,24 +26,17 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-16 px-4 font-[family-name:var(--font-rethink)]">
+    <section className="text-black dark:text-white py-16 px-4 font-[family-name:var(--font-rethink)]">
       <div className="max-w-6xl mx-auto flex flex-col gap-4">
         <SectionHeader
           title="Century"
           heading="Fully comprehensive School Management Platform"
           description="Ready to transform your school's digital infrasture? Fill out the form below and we will help you get started with a customized solution tailored to your institution's needs."
         />
-        <h2 className="text-3xl dark:text-black lg:text-5xl font-bold font-[family-name:var(--font-rethink)] mb-2">
-          Get In Touch
-        </h2>
-        <p className="text-gray-600 font-[family-name:var(--font-rethink)] mb-8 pb-4">
-          Streamline your processes and empower your team with our products.
-          Effortlessly manage employee data, and more.
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="col-span-1 space-y-4">
-            <div className="bg-orange-800 text-white p-6 rounded-2xl">
+            <div className="bg-orange-800 text-white font-[family-name:var(--font-rethink)] p-6 rounded-2xl">
               <h3 className="font-semibold text-xl mb-2">
                 Tell us about your institution and requirements
               </h3>
@@ -58,7 +51,7 @@ const ContactUs: React.FC = () => {
                 Book Appointment
               </Button>
             </div>
-            <div className="bg-blue-950 p-6 rounded-2xl">
+            <div className="bg-blue-950 p-6 rounded-2xl font-[family-name:var(--font-rethink)]">
               <h3 className="text-white font-semibold mb-2 text-xl">
                 Contact to our team
               </h3>
@@ -75,8 +68,8 @@ const ContactUs: React.FC = () => {
             </div>
           </div>
 
-          <div className="col-span-2 bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-xl font-semibold mb-4 font-[family-name:var(--font-rethink)]">
+          <div className="col-span-2 bg-white p-6 rounded-2xl shadow font-[family-name:var(--font-rethink)]">
+            <h3 className="text-xl font-semibold mb-4 ">
               Send us a message
             </h3>
             <form

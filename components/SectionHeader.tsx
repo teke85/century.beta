@@ -13,9 +13,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <section className="section-header w-full flex items-center flex-col gap-2">
-      <h4 className="section-title font-semibold dark:text-black font-[family-name:var(--font-rethink)] mx-auto">{title}</h4>
-      <h2 className="section-heading dark:text-black font-[family-name:var(--font-rethink)] text-3xl">{heading}</h2>
-      <p className="section-description dark:text-black font-[family-name:var(--font-rethink)]">{description}</p>
+      <h4 className="section-title font-semibold text-gray-600 font-[family-name:var(--font-rethink)] text-xl mx-auto">{title}</h4>
+      <h2 className="section-heading text-gray-600 font-[family-name:var(--font-rethink)] text-3xl">{heading}</h2>
+      <p className="section-description text-gray-600 font-[family-name:var(--font-rethink)]">{description}</p>
     </section>
   );
 };

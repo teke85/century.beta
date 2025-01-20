@@ -82,6 +82,11 @@ const solutions = [
     href: "/solutions/private-schools",
     image: "/images/solutions-overview.jpg",
   },
+  {
+    title: "Century Search Portal",
+    href: "/search-portal",
+    image: "/images/solutions-overview.jpg",
+  },
 ];
 
 const features = [
@@ -274,17 +279,9 @@ export default function SiteHeader() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/directory" legacyBehavior passHref>
+                  <Link href="/search-portal" legacyBehavior passHref>
                     <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                      School Directory
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link href="/how-it-works" legacyBehavior passHref>
-                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                      How It Works
+                      Search Portal
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -302,7 +299,12 @@ export default function SiteHeader() {
           <div className="hidden md:flex space-x-4">
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline">Register your School</Button>
+                <Button
+                  className="font-[family-name:var(--font-rethink)]"
+                  variant="outline"
+                >
+                  Register your School
+                </Button>
               </DialogTrigger>
               <DialogContent className="max-w-5xl">
                 <DialogHeader>
@@ -312,9 +314,12 @@ export default function SiteHeader() {
                 <SchoolRegistrationForm />
               </DialogContent>
             </Dialog>
-            <DropdownMenu >
+            <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">
+                <Button
+                  className="font-[family-name:var(--font-rethink)]"
+                  variant="outline"
+                >
                   <User className="mr-2 font-[family-name:var(--font-rethink)] h-4 w-4" />
                   <span>Menu</span>
                   <ChevronDown className="ml-2 h-4 w-4" />
