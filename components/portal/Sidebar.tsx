@@ -14,8 +14,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ChevronDown, ChevronRight, Menu } from 'lucide-react';
+import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { ChevronDown, ChevronRight, Menu } from "lucide-react";
 
 type Filters = {
   keyword: string;
@@ -34,7 +34,12 @@ type SidebarProps = {
   setIsOpen: (isOpen: boolean) => void;
 };
 
-export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps) {
+export function Sidebar({
+  filters,
+  setFilters,
+  isOpen,
+  setIsOpen,
+}: SidebarProps) {
   const [openSections, setOpenSections] = useState({
     location: true,
     schoolType: true,
@@ -104,14 +109,20 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full">
           <h3 className="text-lg font-medium">Location</h3>
-          {openSections.location ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          {openSections.location ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-2">
           <div className="space-y-2">
             <Label htmlFor="province">Province</Label>
             <Select
               value={filters.province}
-              onValueChange={(value) => setFilters({ ...filters, province: value })}
+              onValueChange={(value) =>
+                setFilters({ ...filters, province: value })
+              }
             >
               <SelectTrigger id="province" className="dark:border-neutral-50">
                 <SelectValue placeholder="Select province" />
@@ -135,7 +146,11 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full">
           <h3 className="text-lg font-medium">School Type</h3>
-          {openSections.schoolType ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          {openSections.schoolType ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-2">
           <div className="space-y-2">
@@ -166,16 +181,25 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full">
           <h3 className="text-lg font-medium">Specialization</h3>
-          {openSections.specialization ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          {openSections.specialization ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-2">
           <div className="space-y-2">
             <Label htmlFor="specialization">Specialization</Label>
             <Select
               value={filters.specialization}
-              onValueChange={(value) => setFilters({ ...filters, specialization: value })}
+              onValueChange={(value) =>
+                setFilters({ ...filters, specialization: value })
+              }
             >
-              <SelectTrigger id="specialization" className="dark:border-neutral-50">
+              <SelectTrigger
+                id="specialization"
+                className="dark:border-neutral-50"
+              >
                 <SelectValue placeholder="Select specialization" />
               </SelectTrigger>
               <SelectContent className="dark:bg-white dark:text-black">
@@ -197,7 +221,11 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full">
           <h3 className="text-lg font-medium">Accommodation</h3>
-          {openSections.accommodation ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          {openSections.accommodation ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-2">
           <div className="flex flex-col gap-4 items-start">
@@ -218,7 +246,10 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
                 className="shadow-2xl"
                 checked={filters.offerAccommodation === true}
                 onCheckedChange={(checked) =>
-                  setFilters({ ...filters, offerAccommodation: checked ? true : null })
+                  setFilters({
+                    ...filters,
+                    offerAccommodation: checked ? true : null,
+                  })
                 }
               />
               <Label htmlFor="accommodation">Offers Accommodation</Label>
@@ -234,14 +265,20 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full">
           <h3 className="text-lg font-medium">Gender</h3>
-          {openSections.gender ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          {openSections.gender ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-2">
           <div className="space-y-2">
             <Label htmlFor="gender">Gender</Label>
             <Select
               value={filters.gender}
-              onValueChange={(value) => setFilters({ ...filters, gender: value })}
+              onValueChange={(value) =>
+                setFilters({ ...filters, gender: value })
+              }
             >
               <SelectTrigger id="gender" className="dark:border-neutral-50">
                 <SelectValue placeholder="Select gender" />
@@ -269,4 +306,3 @@ export function Sidebar({ filters, setFilters, isOpen, setIsOpen }: SidebarProps
     </>
   );
 }
-

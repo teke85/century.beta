@@ -3,15 +3,12 @@ import React from "react";
 import Link from "next/link";
 import {
   Bell,
-  CircleUser,
   ExternalLink,
   Home,
   LayoutGrid,
   LineChart,
-  Menu,
   Package,
   Package2,
-  Search,
   ShoppingCart,
   Users,
 } from "lucide-react";
