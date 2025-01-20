@@ -36,7 +36,6 @@ import {
   LogIn,
   User,
   Settings,
-  LogOut,
   HelpCircle,
   BookOpen,
 } from "lucide-react";

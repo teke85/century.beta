@@ -86,7 +86,7 @@ export default function PricingPage() {
           Simple, transparent pricing for schools of all sizes
         </h1>
         <p className="text-lg text-muted-foreground mb-8 font-[family-name:var(--font-rethink)]">
-          Choose the perfect plan for your school's needs, with no hidden fees
+          Choose the perfect plan for your schools needs, with no hidden fees
         </p>
 
         {/* Billing Toggle */}
@@ -182,7 +182,7 @@ export default function PricingPage() {
               What happens if we exceed our student limit?
             </h3>
             <p className="text-muted-foreground font-[family-name:var(--font-rethink)]">
-              We'll notify you when you're approaching your limit. You can then
+              We will notify you when you are approaching your limit. You can then
               choose to upgrade to the next tier or contact us for a custom
               solution.
             </p>
